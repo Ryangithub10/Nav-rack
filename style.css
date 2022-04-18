@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.roboto-font {
+  font-family: roboto, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 2.5rem;
+  background-color: rgb(35,37,40);
+  color: white;
+  font-family: arial, sans-serif;
+}
+
+nav header {
+  width: 55%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgb(35,37,40);
+  border-top: 3px solid rgb(53,57,62);
+  width: 100%;
+  height: 10rem;
+  position: absolute;
+  list-style-type: none;
+  top: 2.5rem;
+  transform: translateY(-120%);
+  transition: 600ms;
+  z-index: -1;
+}
+
+nav ul.active {
+  transform: translateY(0);
+}
+
+nav ul li {
+  margin-left: 10px;
+}
+
+nav .nav-toggle {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18px;
+}
+
+nav .nav-toggle input {
+  opacity: 0;
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  z-index: 2;
+}
+
+nav .nav-toggle span {
+  display: block;
+  height: 3px;
+  width: 28px;
+  background-color: white;
+  transition: 500ms;
+}
+
+nav .nav-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+nav .nav-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+nav .nav-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+nav .nav-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+}
+
+nav .nav-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+  opacity: 0;
+}
